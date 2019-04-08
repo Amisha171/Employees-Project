@@ -1,0 +1,43 @@
+<div id="addTabData" ng-controller="addController">
+    <h1 ng-if="!isEdit">Add New Employee Details</h1>
+    <h1 ng-if="isEdit">Edit Employee Details</h1>
+
+    <form name="empForm">
+        <br> SSN:
+        <input type="text" name="id" ng-model="employee.id" ng-pattern= "/^[0-9]*$/" ng-disabled="isEdit" required>
+        <span style="color:red" ng-show="empForm.id.$touched && empForm.id.$invalid">SSN is required</span>
+        <span style="color:red" ng-show="empForm.id.$error.pattern">Enter only numbers</span>
+        <span style="color:red">{{ssnError}}</span>
+        <br>
+        <br> Gender:
+        <input type="radio" value="M" name="gender" ng-model="employee.gender">M
+        <input type="radio" value="F" name="gender" ng-model="employee.gender">F
+        <br>
+        <br> First Name:
+        <input type="text" name="fname" ng-model="employee.firstname" ng-pattern="/^[a-zA-z]*$/" required>
+                <span style="color:red" ng-show="empForm.fname.$touched && empForm.fname.$invalid">Firstname is required</span>
+                <span style="color:red" ng-show="empForm.fname.$error.pattern">Enter only Alphabets</span>
+        <br>
+        <br> Last Name:
+        <input type="text" name="lname" ng-model="employee.lastname" ng-pattern="/^[a-zA-z]*$/" required>
+        <span style="color:red" ng-show="empForm.lname.$touched && empForm.lname.$invalid">Lastname is required</span>
+        <span style="color:red" ng-show="empForm.lname.$error.pattern">Enter only Alphabets</span>
+        <br>
+        <br> Email:
+        <input type="email" name="mail" ng-model="employee.email" required>
+        <span style="color:red" ng-show="empForm.mail.$touched && empForm.mail.$invalid">Valid Email is required</span>
+        <br>
+        <br> City:
+        <input type="text" name="city" ng-model="employee.city" required>
+        <span style="color:red" ng-show="empForm.city.$touched && empForm.city.$invalid">City is required</span>
+        <br>
+        <br> Age:
+        <input type="number" name="age" ng-model="employee.age" required>
+        <span style="color:red" ng-show="empForm.age.$touched && empForm.age.$invalid">Age is required</span>
+        <br>
+        <br>
+
+        <button type="button" class="btn btn-primary btn-sm" ng-disabled="empForm.$invalid" ng-if="!isEdit" ng-click="addForm(employee)">ADD EMPLOYEE</button>
+        <button type="button" class="btn btn-primary btn-sm" ng-disabled="empForm.$invalid" ng-if="isEdit" ng-click="editForm(employee)">EDIT EMPLOYEE</button>
+    </form>
+</div>

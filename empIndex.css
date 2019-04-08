@@ -1,0 +1,41 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #538ce8;
+    color: white;
+    text-align:left;
+}
+.container-fluid{
+    background-color: #538ce8;
+}
+.navbar-default .navbar-nav>li>a{
+    color:white;
+}
+
+table{
+    width: 80%;
+    text-align: center;
+    margin: 10%;
+}
+table, th , td  {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+  table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+  }
+  table tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  #addTabData{
+    border: 5px solid #3c1e72;
+    width: 50%;
+    margin: auto auto;
+    padding: 10px;
+  }
+  input:disabled{
+      background-color: bisque;
+  }
